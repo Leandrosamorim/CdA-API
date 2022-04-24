@@ -28,10 +28,6 @@ builder.Services.AddDbContext<ApplicationDBContext>(option => option.UseSqlServe
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddInfrastructure(builder.Configuration);
-//builder.Services.AddScoped<IUserRepository, UserRepository>();
-//builder.Services.AddScoped<ICriminalCodeRepository, CriminalCodeRepository>();
-//builder.Services.AddScoped<IUserServices, UserServices>();
-//builder.Services.AddScoped<ICriminalCodeServices, CriminalCodeServices>();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "CdA-API", Version = "v1" });
