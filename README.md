@@ -9,5 +9,6 @@
 <p>&#10003; Swagger</p>
 <p>&#10003; SQL Server</p>
 <p>&#10003; JWT Authentication</p>
+<p>&#10003; OData</p>
 <p>&#10003; SOLID</p>
 
