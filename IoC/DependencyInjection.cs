@@ -19,6 +19,7 @@ namespace IoC
             services.AddScoped<ICriminalCodeRepository, CriminalCodeRepository>();
             services.AddScoped<IUserServices, UserServices>();
             services.AddScoped<ICriminalCodeServices, CriminalCodeServices>();
+            services.AddScoped<IQueueServices, QueueServices>();
             return services;
         }
 

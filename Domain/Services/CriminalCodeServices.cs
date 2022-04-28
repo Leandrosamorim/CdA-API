@@ -12,14 +12,17 @@ namespace Domain.Services
     public class CriminalCodeServices : ICriminalCodeServices
     {
         private readonly ICriminalCodeRepository _criminalCodeRepository;
+        private readonly IQueueServices _queueServices;
 
-        public CriminalCodeServices(ICriminalCodeRepository criminalCodeRepository)
+        public CriminalCodeServices(ICriminalCodeRepository criminalCodeRepository, IQueueServices queueServices)
         {
             _criminalCodeRepository = criminalCodeRepository;
+            _queueServices = queueServices;
         }
 
         public async Task<CriminalCode> Add(CriminalCode criminalCode)
         {
+            _queueServices.EnqueueCriminalCode(criminalCode);
             return await _criminalCodeRepository.Add(criminalCode);
         }
 
